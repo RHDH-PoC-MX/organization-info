@@ -1,0 +1,62 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: rhdh
+  description: Red Hat Developer Hub
+spec:
+  type: team
+  profile:
+    # Intentional no displayName for testing
+    email: rhdh@demo.redhat.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff&margin=25
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: admins
+  description: Admin group
+spec:
+  type: team
+  profile:
+    # Intentional no displayName for testing
+    email: admins@demo.redhat.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff&margin=25
+  parent: rhdh
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: jarceort-at-redhat
+spec:
+  profile:
+    # Intentional no displayName for testing
+    email: user1@demo.redhat.com
+    picture: https://avatars.dicebear.com/api/avataaars/breanna-davison@example.com.svg?background=%23fff
+  memberOf: [admins,rhdh]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: cards-developers
+  description: Developers for the Cards business vertical group
+spec:
+  type: team
+  profile:
+    # Intentional no displayName for testing
+    email: cards-devs@demo.redhat.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff&margin=25
+  parent: rhdh
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: fictional-dev-1
+spec:
+  profile:
+    # Intentional no displayName for testing
+    email: fd1@demo.redhat.com
+    picture: https://avatars.dicebear.com/api/avataaars/breanna-davison@example.com.svg?background=%23fff
+  memberOf: [cards-developers]
