@@ -26,6 +26,20 @@ spec:
   children: []
 ---
 apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: jarceort-at-redhat
+  description: jarceort at redhat
+spec:
+  type: team
+  profile:
+    # Intentional no displayName for testing
+    email: jarceort@demo.redhat.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff&margin=25
+  parent: rhdh
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: jarceort-at-redhat
@@ -34,7 +48,7 @@ spec:
     # Intentional no displayName for testing
     email: user1@demo.redhat.com
     picture: https://avatars.dicebear.com/api/avataaars/breanna-davison@example.com.svg?background=%23fff
-  memberOf: [admins,rhdh]
+  memberOf: [admins,rhdh,jarceort-at-redhat]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Group
